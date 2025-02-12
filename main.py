@@ -1,16 +1,20 @@
-import secrets
-import string
+from password_logic import generate_password
 
-def generate_password(length=12, use_special_chars=True):
-    
-    characters = string.ascii_letters + string.digits
+def main():
+    print("Welcome to my simple Python password generator")
 
-    if use_special_chars:
-        characters += string.punctuation
+    length_str = input("Enter password length: ").strip()
+    if length_str.isdigit():
+        length = int(length_str)
+    else:
+        length = 12
 
-    password = ''.join(secrets.choice(characters) for _ in range(length))
-    return password
+    special_chars_prompt = input("Specail characters? (y/n): ").lower().strip()
+    use_special_chars = (special_chars_prompt != "n")
+
+    password = generate_password(length=length, use_special_chars=use_special_chars)
+
+    print(f"\nGenerated Password: {password}")
 
 if __name__ == "__main__":
-    pwd = generate_password(16, use_special_chars=True)
-    print("New password:", pwd)
+    main()
