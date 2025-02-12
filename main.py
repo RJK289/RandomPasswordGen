@@ -9,7 +9,7 @@ def main():
     else:
         length = 12
 
-    special_chars_prompt = input("Specail characters? (y/n): ").lower().strip()
+    special_chars_prompt = input("Special characters? (y/n): ").lower().strip()
     use_special_chars = (special_chars_prompt != "n")
 
     password = generate_password(length=length, use_special_chars=use_special_chars)
