@@ -1,2 +1,2 @@
 # RandomPasswordGen
-A simple random password generator made in python
+An overly complicated random password generator made in python
